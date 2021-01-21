@@ -2,10 +2,13 @@ import React from 'react';
 import {Formik, Form} from 'formik';
 import {initialValues} from './initialValues';
 
+
 //Form elements
 import {TextInput} from './formElements/textInput';
 import {Select} from './formElements/select';
 import {Radio} from "./formElements/radio";
+import {Link, Route} from "react-router-dom";
+import {Login} from "../Login";
 
 export const Registration = () => {
     const print = (values) => {
@@ -68,6 +71,11 @@ export const Registration = () => {
                     </Select>
                     <div>
                         <button type='submit'>Submit</button>
+                        <Link to={'/login'}>
+                            <Route >
+                                <Login/>
+                            </Route>
+                        </Link>
                     </div>
                 </Form>
             </Formik>
